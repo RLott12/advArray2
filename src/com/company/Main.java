@@ -30,11 +30,19 @@ public class Main {
             else if((inp.equalsIgnoreCase("create"))|| (inp.equalsIgnoreCase("create account"))||(inp.equalsIgnoreCase("create an account"))){
                 System.out.println("Enter new username");
                 String username = reader.nextLine();
+                boolean New = true;
                 for(int i = usernames.size() -1; i>=0; i--){
                     if(usernames.get(i).equals(username)){
                         System.out.println("This username already exists");
+                        New = false;
+                        break;
                     }
-
+                }
+                if(New){
+                    usernames.add(username);
+                    System.out.println("Enter a password");
+                    String password = reader.nextLine();
+                    passwords.add(password);
                 }
             }
         }
