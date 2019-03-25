@@ -17,14 +17,16 @@ public class Main {
                 String username = reader.nextLine();
                 System.out.println("Enter password");
                 String password = reader.nextLine();
+                boolean in = false;
                 for(int i = usernames.size() -1; i >=0; i--){
                     if(usernames.get(i).equals(username) && passwords.get(i).equals(password)){
                         System.out.println("Welcome, " + username);
                         System.exit(0);
+                        in = true;
                     }
-                    else{
-                      System.out.println("Incorrect username or password");
-                    }
+                }
+                if(!in){
+                    System.out.println("Incorrect username or password");
                 }
             }
             else if((inp.equalsIgnoreCase("create"))|| (inp.equalsIgnoreCase("create account"))||(inp.equalsIgnoreCase("create an account"))){
